@@ -4,20 +4,21 @@
         <div class="col-md-12">
             <br>
             <h2>Contacto</h2>
+            <p>El simbolo * significa que el campo es requerido!</p>
             <form method="POST" action="/contacto" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nombre</label>
+                    <label for="exampleInputEmail1">Nombre (*)</label>
                     <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Descripción</label>
-                    <textarea type="text" name="descripcion" class="form-control" id="exampleInputEmail1" placeholder="Escriba una breve descripcion"></textarea>
+                    <label for="exampleInputEmail1">Email (*)</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Escriba su email">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Precio</label>
-                    <input type="text" name="precio" class="form-control" id="exampleInputEmail1" placeholder="Precio">
+                    <label for="exampleInputEmail1">Consulta (*)</label>
+                    <textarea type="text" name="consulta" class="form-control" id="exampleInputEmail1" placeholder="Escriba su consulta"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default" style="background: #3c763d; color: #fff; border: #3c763d;">Enviar</button>
             </form>

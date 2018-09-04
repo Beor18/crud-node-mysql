@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 const fileUpload = require('express-fileupload');
+const nodemailer = require('nodemailer');
 
 router.use(fileUpload());
 
@@ -44,6 +45,39 @@ router.get('/contacto', async(req, res, next) => {
             title: 'Express',
             // productos: r
         });
+    });
+});
+
+router.post('/contacto', function(req, res) {
+    let mailOpts, smtpTrans;
+    smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: 'SU-GMAIL',
+            pass: 'SU-PASSWORD'
+        }
+    });
+
+    mailOpts = {
+        from: req.body.nombre + ' &lt;' + req.body.email + '&gt;',
+        to: 'REPETIR-GMAIL',
+        subject: 'Nuevo Mensaje desde Formulario Web',
+        text: `${req.body.nombre} (${req.body.email}) Mando la siguiente Consulta: ${req.body.consulta}`
+    };
+    smtpTrans.sendMail(mailOpts, function(error, response) {
+        if (error) {
+            res.redirect('/');
+            console.log("Ups hubo un error al enviar!");
+        } else {
+            const nombre = req.body.nombre;
+            const email = req.body.email;
+            const consulta = req.body.consulta;
+            con.query("insert into contacto (nombre,email,consulta,created_at) value (\"" + nombre + "\",\"" + email + "\",\"" + consulta + "\",NOW())", function(e, r) {});
+            res.render('contacto');
+            console.log("Consulta Enviada con éxito!");
+        }
     });
 });
 
