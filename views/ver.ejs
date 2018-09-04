@@ -1,0 +1,16 @@
+<% include partials/head %>
+    <div class="fluid-container col-md-12" style="background: #333; height: 480px;">
+        <img class="card-img-top" src="<%=person.imagen%>" style="object-fit: contain; max-width: 100%; max-height: 100%; width: 100%; height: auto;" alt="Card image cap">
+    </div>
+    <div class="fluid-container col-md-12" style="background: #eee; height: auto; padding-top: 10px !important; padding-bottom: 10px;">
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    <%= person.nombre %><small></h1>
+              
+            </div>
+            <p><%= person.descripcion %></p>
+          </div>
+        
+        </div>
+<% include partials/footer %>
