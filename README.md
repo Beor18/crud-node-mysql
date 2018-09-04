@@ -1,7 +1,8 @@
 # CRUD - NodeJS - MySQL
 
 Curso de NodeJS dictado por la Universidad Tecnológica Nacional (UTN) - Evaluación Final.
-Profesora Ing. M. Verónica Piñeyro.
+- Profesora Ing. M. Verónica Piñeyro.
+- Alumno: Fernando Gabriel López
 
 ### Instalación
 

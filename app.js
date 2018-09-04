@@ -30,7 +30,7 @@ con = mysql.createConnection({
 
     host: 'localhost',
     user: 'root',
-    password: 'romanos18',
+    password: 'root',
     port: 3306, //puerto mysql
     database: 'basefinalnode'
 });
