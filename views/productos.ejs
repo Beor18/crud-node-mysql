@@ -2,17 +2,36 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="jumbotron">
-                <h1 class="display-4">Bienvenido!</h1>
-                <p class="lead"></p>
-                <hr class="my-4">
+            <br>
+            <h2>Nuevo Producto</h2>
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+                </div>
 
-            </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Descripción</label>
+                    <textarea type="text" name="descripcion" class="form-control" id="exampleInputEmail1" placeholder="Escriba una breve descripcion"></textarea>
+                </div>
 
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Precio</label>
+                    <input type="text" name="precio" class="form-control" id="exampleInputEmail1" placeholder="Precio">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Subir Imagen (Max. 3MB)</label>
+                    <input type="file" name="imagen">
+                </div>
+
+
+                <button type="submit" class="btn btn-default" style="background: #3c763d; color: #fff; border: #3c763d;">Guardar</button>
+            </form>
         </div>
     </div>
     <div><br><br>
-        <h2>Últimos Productos</h2>
+        <h2>Lista de Productos</h2>
     </div>
     <div class="row col-md-12">
 
@@ -35,8 +54,7 @@
                         <a class="alert alert-warning" style="padding:5px !important; font-size:13px !important;" href="../productos/editar/<%=productos[i].id%>"><i class="far fa-edit"></i></a>
                         <a class="alert alert-danger" style="padding:5px !important; font-size:13px !important;" href="../productos/borrar/<%=productos[i].id%>"><i class="far fa-trash-alt"></i></a>
                         <br>
-                        <br>
-                        <small class="text-muted"><strong>Publicado </strong> <%=productos[i].created_at%></small>
+                        <small class="text-muted"><%=productos[i].created_at%></small>
                     </div>
                 </div>
                 <% }

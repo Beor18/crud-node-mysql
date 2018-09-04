@@ -1,0 +1,23 @@
+<% include partials/head %>
+    <form method="post" action="/productos/editar">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text" name="person[nombre]" value="<%= person.nombre %>" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Descripcion</label>
+            <input type="text" name="person[descripcion]" value="<%= person.descripcion %>" class="form-control" id="exampleInputEmail1" placeholder="Descripcion">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Precio</label>
+            <input type="text" name="person[precio]" class="form-control" value="<%= person.precio %>" id="exampleInputEmail1" placeholder="Precio">
+        </div>
+
+
+        <input type="hidden" name="person[id]" value="<%= person.id %>">
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <% include partials/footer %>
